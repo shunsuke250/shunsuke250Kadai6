@@ -1,0 +1,15 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "07u-M5-6I3"; */
+"07u-M5-6I3.text" = "Label";
+
+/* Class = "UIButton"; configuration.title = "判定"; ObjectID = "4hV-tV-yez"; */
+"4hV-tV-yez.configuration.title" = "判定";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "4hV-tV-yez"; */
+"4hV-tV-yez.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "gSf-Yr-Zlh"; */
+"gSf-Yr-Zlh.text" = "1";
+
+/* Class = "UILabel"; text = "100"; ObjectID = "wYl-aR-d3D"; */
+"wYl-aR-d3D.text" = "100";
