@@ -77,6 +77,7 @@
 				AB1CD5AC2AAC70FD0047E2D8 /* Sources */,
 				AB1CD5AD2AAC70FD0047E2D8 /* Frameworks */,
 				AB1CD5AE2AAC70FD0047E2D8 /* Resources */,
+				AB1CD5CB2AAC90040047E2D8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -109,6 +110,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = AB1CD5A72AAC70FD0047E2D8;
 			productRefGroup = AB1CD5B12AAC70FD0047E2D8 /* Products */;
@@ -132,6 +134,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AB1CD5CB2AAC90040047E2D8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AB1CD5AC2AAC70FD0047E2D8 /* Sources */ = {
