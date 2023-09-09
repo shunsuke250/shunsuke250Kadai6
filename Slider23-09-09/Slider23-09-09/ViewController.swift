@@ -18,6 +18,10 @@ class ViewController: UIViewController {
     
     private lazy var questionValue = randomValue
     
+    private var randomValue: Int {
+        return Int.random(in: 1...100)
+    }
+
     @IBAction private func didTapJudgeButton(_ sender: UIButton) {
         let answerValue = Int(answerSlider.value * 100)
         if questionValue == answerValue {
@@ -27,10 +31,6 @@ class ViewController: UIViewController {
         } else {
             alert(message: "はずれ\nあなたの値: \(answerValue)")
         }
-    }
-    
-    var randomValue: Int {
-        return Int.random(in: 1...100)
     }
 
     private func alert(message: String) {
