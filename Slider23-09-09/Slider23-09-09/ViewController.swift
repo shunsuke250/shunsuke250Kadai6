@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         questionNumLabel.text = "\(questionValue)"
     }
     
-    lazy var questionValue = randomValue
+    private lazy var questionValue = randomValue
     
     @IBAction private func didTapJudgeButton(_ sender: UIButton) {
         let answerValue = Int(answerSlider.value * 100)
