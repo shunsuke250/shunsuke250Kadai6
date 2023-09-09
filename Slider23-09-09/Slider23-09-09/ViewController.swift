@@ -17,6 +17,14 @@ class ViewController: UIViewController {
     }
 
     @IBAction private func didTapJudgeButton(_ sender: UIButton) {
+    private func alert(message: String) {
+        let alert = UIAlertController(title: "結果", message: message, preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "OK", style: .default) { (_) in
+            self.dismiss(animated: true, completion: nil)
+        }
+
+        alert.addAction(okButton)
+        present(alert, animated: true, completion: nil)
     }
     
 }
