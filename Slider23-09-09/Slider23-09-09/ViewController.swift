@@ -13,16 +13,32 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        questionNumLabel.text = "\(questionValue)"
+    }
+    
+    lazy var questionValue = randomValue
+    
+    @IBAction private func didTapJudgeButton(_ sender: UIButton) {
+        let answerValue = Int(answerSlider.value * 100)
+        if questionValue == answerValue {
+            alert(message: "あたり\nあなたの値: \(answerValue)")
+            questionValue = randomValue
+            questionNumLabel.text = "\(questionValue)"
+        } else {
+            alert(message: "はずれ\nあなたの値: \(answerValue)")
+        }
+    }
+    
+    var randomValue: Int {
+        return Int.random(in: 1...100)
     }
 
-    @IBAction private func didTapJudgeButton(_ sender: UIButton) {
     private func alert(message: String) {
         let alert = UIAlertController(title: "結果", message: message, preferredStyle: .alert)
         let okButton = UIAlertAction(title: "OK", style: .default) { (_) in
             self.dismiss(animated: true, completion: nil)
         }
-
+        
         alert.addAction(okButton)
         present(alert, animated: true, completion: nil)
     }
