@@ -35,7 +35,7 @@ class ViewController: UIViewController {
 
     private func alert(message: String) {
         let alert = UIAlertController(title: "結果", message: message, preferredStyle: .alert)
-        let okButton = UIAlertAction(title: "OK", style: .default) { (_) in
+        let okButton = UIAlertAction(title: "再挑戦", style: .default) { (_) in
             self.dismiss(animated: true, completion: nil)
         }
 
