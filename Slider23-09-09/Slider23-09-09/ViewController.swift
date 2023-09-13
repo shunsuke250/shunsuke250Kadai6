@@ -14,20 +14,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         questionNumLabel.text = "\(questionValue)"
+        answerSlider.minimumValue = 1
+        answerSlider.maximumValue = 100
     }
 
-    private lazy var questionValue = randomValue
+    private var questionValue = ViewController.makeRandomValue()
 
-    private var randomValue: Int {
-        return Int.random(in: 1...100)
+    private static func makeRandomValue() -> Int {
+        Int.random(in: 1...100)
     }
 
     @IBAction private func didTapJudgeButton(_ sender: UIButton) {
-        let answerValue = Int(answerSlider.value * 100)
+        let answerValue = Int(answerSlider.value)
         if questionValue == answerValue {
             alert(message: "あたり\nあなたの値: \(answerValue)")
-            questionValue = randomValue
-            questionNumLabel.text = "\(questionValue)"
         } else {
             alert(message: "はずれ\nあなたの値: \(answerValue)")
         }
@@ -35,8 +35,11 @@ class ViewController: UIViewController {
 
     private func alert(message: String) {
         let alert = UIAlertController(title: "結果", message: message, preferredStyle: .alert)
-        let okButton = UIAlertAction(title: "再挑戦", style: .default) { (_) in
-            self.dismiss(animated: true, completion: nil)
+        let okButton = UIAlertAction(title: "再挑戦", style: .default) { [weak self] _ in
+            guard let strongSelf = self else { return }
+            strongSelf.questionValue = ViewController.makeRandomValue()
+            strongSelf.questionNumLabel.text = "\(strongSelf.questionValue)"
+            strongSelf.dismiss(animated: true, completion: nil)
         }
 
         alert.addAction(okButton)
